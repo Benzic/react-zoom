@@ -10,14 +10,14 @@ interface IProps {
     onChangePosition?: (item: boolean) => void          //位移位置很小，视为没有移动返回false,主要用于缩放区域带有点击事件的情况，辅助判断点击事件是否生效。
 }
 interface paramsType {
-    zoomVal: number,                            //放大比例
-    left: any,                                  //左边偏移
-    top: any,                                   //顶部偏移
-    currentX: any,                              //相较于窗口左边距离
-    currentY: any,                              //相较于窗口顶部距离
-    originLeft: any,                            //初始左偏移量
-    originTop: any,                             //初始顶部偏移量
-    rotate: any,                                //旋转角度
+    zoomVal: number,                               //放大比例
+    left: any,                                     //左边偏移
+    top: any,                                      //顶部偏移
+    currentX: number,                              //相较于窗口左边距离
+    currentY: number,                              //相较于窗口顶部距离
+    originLeft: number,                            //初始左偏移量
+    originTop: number,                             //初始顶部偏移量
+    rotate: number,                                //旋转角度
     flag: boolean
 }
 let params: paramsType = {
@@ -31,7 +31,7 @@ let params: paramsType = {
     currentY: 0,
     flag: false
 };
-const DomDragAndScale: React.FC<IProps> = (({ children, className, maxZoom = 3, rotate, minZoom = 0.2, resetPosition, onChangePosition }): JSX.Element => {
+const Zoom: React.FC<IProps> = (({ children, className, maxZoom = 3, rotate, minZoom = 0.2, resetPosition, onChangePosition }): JSX.Element => {
     const [roateChange, setRoateChange] = useState(false)
     const currentDom = useRef<HTMLDivElement>(null)
     const warpNode = useRef<HTMLDivElement>(null)
@@ -163,4 +163,4 @@ const DomDragAndScale: React.FC<IProps> = (({ children, className, maxZoom = 3, 
         </div>
     </div>
 })
-export default DomDragAndScale
+export default Zoom

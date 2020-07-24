@@ -1,15 +1,15 @@
 import React, { useState } from 'react';
 import './App.css';
-import DragAndMove from './Zoom'
+import Zoom from './Zoom'
 function App() {
   const [resetPostion, setResetPostion] = useState(false)
   const [rotate, setRotate] = useState(0)
   return (
     <div className="App">
       <div style={{ width: "500px", height: "500px", overflow: "hidden", marginLeft: "200px" }}>
-        <DragAndMove rotate={rotate} resetPosition={resetPostion} >
-          <img style={{ height: "200px", width: "200px" }} src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1595568348947&di=fb735f71a0c1c71db89d648055baa7c7&imgtype=0&src=http%3A%2F%2Fcdn.feeyo.com%2Fpic%2F20140802%2F201408020129205747.jpg" alt="" />
-        </DragAndMove>
+        <Zoom rotate={rotate} resetPosition={resetPostion} >
+          <img style={{ height: "600px", width: "600px" }} src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1595568348947&di=fb735f71a0c1c71db89d648055baa7c7&imgtype=0&src=http%3A%2F%2Fcdn.feeyo.com%2Fpic%2F20140802%2F201408020129205747.jpg" alt="" />
+        </Zoom>
       </div>
       <button onClick={() => {
         setResetPostion(!resetPostion)
