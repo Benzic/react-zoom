@@ -20,4 +20,4 @@ props参数:
           <img style={{ height: "200px", width: "200px" }} src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1595568348947&di=fb735f71a0c1c71db89d648055baa7c7&imgtype=0&src=http%3A%2F%2Fcdn.feeyo.com%2Fpic%2F20140802%2F201408020129205747.jpg" alt="" />
     </DragAndMove>
 ```
-![avatar](/src/chrome-capture.gif)
+![图片](./src/chrome-capture.gif)
