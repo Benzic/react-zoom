@@ -1,24 +1,29 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, { useState } from 'react';
 import './App.css';
-
+import DragAndMove from './Zoom'
 function App() {
+  const [resetPostion, setResetPostion] = useState(false)
+  const [rotate, setRotate] = useState(0)
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <div style={{ width: "500px", height: "500px", overflow: "hidden", marginLeft: "200px" }}>
+        <DragAndMove rotate={rotate} resetPosition={resetPostion} >
+          <img style={{ height: "200px", width: "200px" }} src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1595568348947&di=fb735f71a0c1c71db89d648055baa7c7&imgtype=0&src=http%3A%2F%2Fcdn.feeyo.com%2Fpic%2F20140802%2F201408020129205747.jpg" alt="" />
+        </DragAndMove>
+      </div>
+      <button onClick={() => {
+        setResetPostion(!resetPostion)
+        setRotate(0)
+      }}>还原</button>
+      <button onClick={() => {
+        setRotate(rotate - 90)
+      }}>向左旋转</button>
+      <button onClick={() => {
+        setRotate(rotate + 90)
+      }}>向右旋转</button>
+      <button onClick={() => {
+        setRotate(rotate + 180)
+      }}>旋转180度</button>
     </div>
   );
 }
